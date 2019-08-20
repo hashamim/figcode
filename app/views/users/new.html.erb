@@ -1,0 +1,17 @@
+<h1>Welcome to The Interstate Messaging System! </h1>
+<p>Please fill out the form below and click the submit button when it appears to create your account</p>
+<form class="user-form" action="<%= users_url %>" method="POST">
+    <label> <strong>Username</strong>
+        <span id="usernameErrors"></span>
+        <input type="text" name="user[username]">
+    </label>
+    <label><strong>Password</strong>
+        <span id="passwordErrors"></span>
+        <input type="password" name="user[password]" oninput="passwordCheck(this.value)" onchange="errorsDisplay()">
+    </label>
+    <label><strong>Address</strong>
+        <span id="addressErrors"></span>
+        <input type="text" name="user[address]">
+    </label>
+    <input id="submit-btn" type="submit" value="submit">
+</form>

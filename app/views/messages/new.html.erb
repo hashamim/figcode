@@ -1,0 +1,11 @@
+<ul>
+    <% @received_messages.each do |msg|%>
+        <%= msg.content %>
+    <% end%>
+</ul>
+<form action="<%= messages_url %>" method="POST">
+    <input type="hidden" value="<%= @user.id %>" name="message[sender_id]">
+    <input type="text" name="message[receiver_id]">
+    <input type="text" name="message[body]">
+    <input type="submit" value="Send">
+</form>

@@ -1,0 +1,13 @@
+<h1>Welcome to The Interstate Messaging System! </h1>
+<p>Please login with your username and password</p>
+<form class="user-form" action="<%= session_url %>" method="POST">
+    <label> <strong>Username</strong>
+        <span id="usernameErrors"></span>
+        <input type="text" name="user[username]">
+    </label>
+    <label><strong>Password</strong>
+        <span id="passwordErrors"></span>
+        <input type="password" name="user[password]">
+    </label>
+    <input id="submit-btn" class="session" type="submit" value="Log In">
+</form>
