@@ -19,8 +19,6 @@ ActiveRecord::Schema.define(version: 2019_08_20_154020) do
     t.datetime "updated_at", null: false
     t.integer "sender_id"
     t.integer "receiver_id"
-    t.index ["receiver_id"], name: "index_messages_on_receiver_id"
-    t.index ["sender_id"], name: "index_messages_on_sender_id"
   end
 
   create_table "users", force: :cascade do |t|

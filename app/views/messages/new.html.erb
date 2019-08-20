@@ -1,11 +1,21 @@
+<h1>Greetings <%= @user.username %> </h1>
+<h2> You have <%= @remaining_messages %> messages left and <%= @remaining_characters %> characters remaining </h2>
+<form action="<%= session_url%>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Log Out">
+</form>
 <ul>
     <% @received_messages.each do |msg|%>
         <%= msg.content %>
     <% end%>
 </ul>
-<form action="<%= messages_url %>" method="POST">
+<form action="<%= messages_url %>" method="POST" id="messageform">
     <input type="hidden" value="<%= @user.id %>" name="message[sender_id]">
-    <input type="text" name="message[receiver_id]">
-    <input type="text" name="message[body]">
+    <label> To:
+        <input type="text" name="message[receiver]">
+    </label>
+    <label>Body:
+        <input type="text" name="message[body]">
+    </label>
     <input type="submit" value="Send">
 </form>

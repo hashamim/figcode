@@ -4,8 +4,8 @@ class CreateMessages < ActiveRecord::Migration[5.2]
       t.string :content
       t.integer :number_of_characters
       t.timestamps
-      t.references :sender, foreign_key: true
-      t.references :receiver, foreign_key: true
+      t.integer :sender_id
+      t.integer :receiver_id
     end
   end
 end

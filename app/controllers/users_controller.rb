@@ -4,7 +4,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             session[:session_token] = @user.session_token
-            redirect_to messages_url
+            redirect_to new_message_url
         else
             render json: {errors: @user.errors.full_messages}, status: 422
         end
